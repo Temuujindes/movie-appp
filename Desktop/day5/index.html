@@ -1,0 +1,253 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <div class="columns mt-6">
+      <div class="column is-half is-offset-one-quarter">
+        <div class="mb-4">
+          <button class="button is-info" onclick="salary();">salary</button>
+        </div>
+        <article class="message">
+          <div class="message-body" id="result"></div>
+        </article>
+      </div>
+    </div>
+    <script>
+      function print() {
+        document.getElementById("result").innerText = output;
+      }
+      function salary() {
+        let sales = prompt("enter your sales");
+        s = Number(sales);
+        if (s >= 5000) {
+          s * 0.12;
+          put = "Special";
+        } else if (s >= 3000 && s < 5000) {
+          s * 0.08;
+          put = "great";
+        } else if (s >= 1000 && s < 3000) {
+          s * 0.05;
+          put = "enough";
+        } else {
+          s * 0.02;
+          put = "not enough";
+        }
+
+        output = put;
+        print();
+      }
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basketball League</title>
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0d1b2a;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff6f61;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1400&q=80') no-repeat center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .teams {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .team {
+      background: white;
+      padding: 1rem;
+      width: 120px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .team:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #ff6f61;
+    }
+
+    .team img {
+      max-width: 100%;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background: #0d1b2a;
+      color: white;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .teams {
+        flex-direction: column;
+        align-items: center;
+      }
+      .team {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">BASKETBALL LEAGUE</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Teams</a>
+      <a href="#">Schedule</a>
+      <a href="#">News</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    Welcome to the Basketball League!
+  </section>
+
+  <div class="container">
+
+    <h2>Teams</h2>
+    <div class="teams">
+      <div class="team">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/89/Los_Angeles_Lakers_logo.svg/120px-Los_Angeles_Lakers_logo.svg.png" alt="Team 1 Logo" />
+        <div>Los Angeles Lakers</div>
+      </div>
+      <div class="team">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Golden_State_Warriors_logo.svg/120px-Golden_State_Warriors_logo.svg.png" alt="Team 2 Logo" />
+        <div>Golden State Warriors</div>
+      </div>
+      <div class="team">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/Boston_Celtics.svg/120px-Boston_Celtics.svg.png" alt="Team 3 Logo" />
+        <div>Boston Celtics</div>
+      </div>
+    </div>
+
+    <h2>Upcoming Games</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Home Team</th>
+          <th>Score</th>
+          <th>Away Team</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025-10-01</td>
+          <td>Los Angeles Lakers</td>
+          <td>—</td>
+          <td>Boston Celtics</td>
+          <td>7:00 PM</td>
+        </tr>
+        <tr>
+          <td>2025-10-03</td>
+          <td>Golden State Warriors</td>
+          <td>—</td>
+          <td>Los Angeles Lakers</td>
+          <td>8:00 PM</td>
+        </tr>
+        <tr>
+          <td>2025-10-05</td>
+          <td>Boston Celtics</td>
+          <td>—</td>
+          <td>Golden State Warriors</td>
+          <td>6:30 PM</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</body>
+</html>

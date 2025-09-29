@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <div class="columns mt-6">
+      <div class="column is-half is-offset-one-quarter">
+        <div class="mb-4">
+          <button class="button is-info" onclick="leapYear();">
+            Leap year checker
+          </button>
+          <button class="button is-primary" onclick="triangle();">
+            triangle checker
+          </button>
+          <button class="button is-info" onclick="clock();">
+            clock converter
+          </button>
+          <button class="button is-info" onclick="months();">month days</button>
+          <button class="button is-info" onclick="atm();">ATM withdraw</button>
+        </div>
+        <article class="message">
+          <div class="message-body" id="result"></div>
+        </article>
+      </div>
+    </div>
+    <script>
+      function print() {
+        document.getElementById("result").innerText = output;
+      }
+      function leapYear() {
+        const input = prompt("Year?");
+        const year = Number(input);
+        if ((year % 100 === 0 && year % 400 === 0) || year % 4 === 0) {
+          output = "Leap year";
+        } else {
+          output = "Not leap year";
+        }
+        print();
+      }
+      function clock() {
+        const input = prompt("Enter your hour");
+        const time = Number(input);
+
+        if (time > 0 && time < 12) {
+          output = time + "AM";
+        }
+        print();
+      }   function months() {
+        const input = prompt("Enter a month");
+        const month = Number (input)
+        if(month === 2){
+          output= 28/29;
+        } else if ( month === 1 ||
+          month === 3 ||
+          month === 5 ||
+          month === 7 ||
+          month === 8 ||
+          month === 10 ||
+          month === 12 ||) {
+
+          output = "31";
+        } else if(
+          month === 4 ||
+          month === 6 ||
+          month === 9 ||
+          month === 11 ||
+       ) {output = "30"}
+        else{ output = " Incorrect month"
+        }
+        print();
+      }
+
+      function atm() {}
+    </script>
+  </body>
+</html>
